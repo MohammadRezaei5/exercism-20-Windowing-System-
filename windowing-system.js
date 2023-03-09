@@ -40,3 +40,35 @@ class Position {
 
 // console.log(point.x);
 // console.log(point.y);
+
+///---///
+
+// const programWindow = new ProgramWindow();
+
+class ProgramWindow {
+  screenSize = new Size(800, 600);
+  size = new Size();
+  position = new Position();
+  resize(newSize) {
+    this.size.width = Math.min(
+      Math.max(newSize.width, 1),
+      this.screenSize.width - this.position.x
+    );
+    this.size.height = Math.min(
+      Math.max(newSize.height, 1),
+      this.screenSize.height - this.position.y
+    );
+  }
+  move(newPosition) {
+    this.position.x = Math.min(
+      Math.max(newPosition.x, 0),
+      this.screenSize.width - this.size.width
+    );
+    this.position.y = Math.min(
+      Math.max(newPosition.y, 0),
+      this.screenSize.height - this.size.height
+    );
+  }
+}
+
+// console.log(programWindow.screenSize.width);
