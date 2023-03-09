@@ -72,3 +72,18 @@ class ProgramWindow {
 }
 
 // console.log(programWindow.screenSize.width);
+
+///---///
+
+// const programWindow = new ProgramWindow();
+
+function changeWindow(window) {
+  window.size.width = 400;
+  window.size.height = 300;
+  window.position.x = 100;
+  window.position.y = 150;
+  return window;
+}
+
+// console.log(changeWindow(programWindow));
+// console.log(programWindow.size.width);
